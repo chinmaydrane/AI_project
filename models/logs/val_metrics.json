@@ -1,0 +1,25 @@
+{
+    "num_images": 630,
+    "confusion_matrix": [
+        [
+            505,
+            20
+        ],
+        [
+            5,
+            100
+        ]
+    ],
+    "class_acc": [
+        0.9619,
+        0.9524
+    ],
+    "ppv": [
+        0.9902,
+        0.8333
+    ],
+    "val_accuracy": 0.9603,
+    "val_loss": 0.0790,
+    "val_precision": 0.9590,
+    "val_recall": 0.9612
+}
