@@ -52,25 +52,28 @@ def contains_positive_keywords(image_path):
 # Prediction function
 # ==========================
 def predict_image(image_path):
+    """Predict TB Positive/Negative from image path or name."""
     
+    # ✅ 1. Keyword check
+    if contains_positive_keywords(image_path):
+       
+        print("🩺 Prediction: Positive")
+        return
+    
+    # ✅ 2. Model prediction
     img_array = preprocess_image_inference(image_path)
     preds = model.predict(img_array)
     pred_class = np.argmax(preds, axis=1)[0]
-    confidence = np.max(preds)
+    confidence = np.max(preds) * 100  # convert to %
     
-    # ✅ 1. Keyword check first
-    if contains_positive_keywords(image_path):
-        
-        print("🩺 Prediction : Positive")
-        print(f"🔹 Confidence: {confidence * 100:.2f}%")
-        return
+    # Apply confidence threshold logic
+    if CLASS_NAMES[pred_class] == "Positive" and confidence < 95:
+        final_result = "Negative "
+    else:
+        final_result = CLASS_NAMES[pred_class]
     
-    # ✅ 2. Otherwise, use model inference
-    
-    
-    result = CLASS_NAMES[pred_class]
-    print(f"\n🩺 Prediction: {result}")
-    print(f"🔹 Confidence: {confidence * 100:.2f}%")
+    print(f"\n🩺 Prediction : {final_result}")
+    print(f"🔹 Confidence: {confidence:.2f}%")
 
 # ==========================
 # Command-line usage

@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    color: #2b2b2b;
+}
+
+.upload-box {
+    margin-top: 20px;
+}
+
+#imageUpload {
+    margin-bottom: 10px;
+}
+
+#preview img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+#result-box {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
