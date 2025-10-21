@@ -2,4 +2,6 @@ data/
 *.h5
 data/
 *.hs
+models/
+*.hdf5
 
